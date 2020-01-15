@@ -1,4 +1,5 @@
-FROM python:3
-ADD ./src/
+FROM python:3-alpine
+
+COPY . .
 RUN pip install -r requirements.txt
-CMD ["python", "./my_script.py"]
+CMD ["python", "./src/start.py"]
