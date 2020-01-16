@@ -8,4 +8,4 @@ RUN apk add --no-cache build-base\
     libressl-dev &&\
     pip install -r requirements.txt
 
-CMD ["python", "./src/start.py"]
+ENTRYPOINT ["python", "/app/src/run.py"]
