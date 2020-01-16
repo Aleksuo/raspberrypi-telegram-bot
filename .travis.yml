@@ -12,6 +12,3 @@ jobs:
       - docker images
       - docker tag raspberrypi-telegram-bot $DOCKER_USERNAME/raspberrypi-telegram-bot
       - docker push $DOCKER_USERNAME/raspberrypi-telegram-bot
-    - stage: test
-      script: docker run --rm $DOCKER_USERNAME/travis-ci-build-stages-demo cat hello.txt
-    - script: docker run --rm $DOCKER_USERNAME/travis-ci-build-stages-demo cat hello.txt
