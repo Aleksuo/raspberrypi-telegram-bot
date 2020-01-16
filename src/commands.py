@@ -5,7 +5,7 @@ def start(update, context):
 
 def ssh(update,context):
     ip = get('https://api.ipify.org').text
-    context.bot.send_message(chat_id=update.effective_chat.id, text="ssh pi@"+ip+":50000")
+    context.bot.send_message(chat_id=update.effective_chat.id, text="ssh pi@"+ip+" -p 50000")
 
 def test(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="BEEP!BEEP!")
