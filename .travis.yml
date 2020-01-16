@@ -1,4 +1,7 @@
-dist: trusty
+language: python
+
+arch:
+    - arm64
 
 jobs:
   include:
