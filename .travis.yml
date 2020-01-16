@@ -1,0 +1,14 @@
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker build -t raspberrypi-telegram-bot .
+      - docker images
+      - docker tag raspberrypi-telegram-bot $DOCKER_USERNAME/raspberrypi-telegram-bot
+      - docker push $DOCKER_USERNAME/raspberrypi-telegram-bot
+    - stage: test
+      script: docker run --rm $DOCKER_USERNAME/travis-ci-build-stages-demo cat hello.txt
+    - script: docker run --rm $DOCKER_USERNAME/travis-ci-build-stages-demo cat hello.txt
