@@ -37,8 +37,10 @@ def main():
     filter = Filters.user(username="@"+username)
     start_handler = CommandHandler('start', start, filter)
     ip_handler = CommandHandler("ip", ip, filter)
+    test_handler = CommandHandler("test", test, filter)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(ip_handler)
+    dispatcher.add_handler(test_handler)
     print("Started polling")
     updater.start_polling()
 
