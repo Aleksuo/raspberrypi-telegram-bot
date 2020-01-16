@@ -1,4 +1,4 @@
-FROM python:3-alpine as base
+FROM arm32v9/python:3-alpine as base
 
 WORKDIR /app
 
