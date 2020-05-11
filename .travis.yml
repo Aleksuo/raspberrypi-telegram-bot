@@ -7,7 +7,6 @@ jobs:
   include:
     - stage: build docker image
       script:
-      - sudo chown -Rv $USER:$GROUP ~/.cache/pip/wheels
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - docker build -t raspberrypi-telegram-bot .
       - docker images
