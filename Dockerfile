@@ -6,6 +6,6 @@ COPY . .
 RUN apk add --no-cache build-base\
     libffi-dev\
     libressl-dev &&\
-    pip install --no-cache-dir -r requirements.txt 
+    sudo pip install -r requirements.txt 
 
 ENTRYPOINT ["python", "/app/src/run.py"]
