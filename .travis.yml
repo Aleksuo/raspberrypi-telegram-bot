@@ -2,7 +2,8 @@ language: python
 
 arch:
     - arm64
-
+env:
+  - PIP_NO_CACHE_DIR=off
 jobs:
   include:
     - stage: build docker image
