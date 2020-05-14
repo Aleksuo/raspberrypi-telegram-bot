@@ -2,3 +2,14 @@
 
 A small project for testing deployment of docker containers on a Raspberry Pi. The docker file is built on travis and then pushed to Docker Hub. The Docker image on the Raspberry Pi is automatically updated using [Watchtower](https://levelup.gitconnected.com/how-to-add-file-upload-to-your-graphql-api-34d51e341f38).
 
+## Getting started
+
+### Prerequisites
+
+### Installing
+
+## Deployment
+
+## Built With
+
+## Licence
