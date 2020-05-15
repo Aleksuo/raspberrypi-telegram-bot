@@ -5,6 +5,11 @@ A small project for testing deployment of docker containers on a Raspberry Pi. T
 ## Getting started
 
 ### Prerequisites
+Before installing you'll need:
+* Python 3.4 or greater
+* [A Telegram Bot API token](https://core.telegram.org/bots#6-botfather)
+
+
 
 ### Installing
 
