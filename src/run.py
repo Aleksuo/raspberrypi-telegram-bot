@@ -5,7 +5,8 @@ import logging
 import os
 import sys
 
-from commands import *
+from commands.ssh_command import SSHCommand
+from commands.simple_text_response_command import SimpleTextResponseCommand
 
 print(os.environ["TELEGRAM_TOKEN"])
 def get_config():
@@ -36,9 +37,10 @@ def main():
 
     print("Initializing handlers")
     filter = Filters.user(username="@"+username)
-    start_handler = CommandHandler('start', start, filter)
-    ssh_handler = CommandHandler("ssh", ssh, filter)
-    test_handler = CommandHandler("test", test, filter)
+
+    start_handler = SimpleTextResponseCommand("start", "Beep!", filter).get_handler()
+    ssh_handler = SSHCommand("50000", "", filter).get_handler()
+    test_handler = SimpleTextResponseCommand("test", "Beep!", filter).get_handler()
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(ssh_handler)
     dispatcher.add_handler(test_handler)
