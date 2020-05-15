@@ -7,6 +7,7 @@ import sys
 
 from commands.ssh_command import SSHCommand
 from commands.simple_text_response_command import SimpleTextResponseCommand
+from commands.temperature_command import TemperatureCommand
 
 print(os.environ["TELEGRAM_TOKEN"])
 def get_config():
@@ -41,9 +42,11 @@ def main():
     start_handler = SimpleTextResponseCommand("start", "Beep!", filter).get_handler()
     ssh_handler = SSHCommand("50000", "", filter).get_handler()
     test_handler = SimpleTextResponseCommand("test", "Beep!", filter).get_handler()
+    temp_handler = TemperatureCommand(filter)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(ssh_handler)
     dispatcher.add_handler(test_handler)
+    dispatcher.add_handler(temp_handler)
     print("Started polling")
     updater.start_polling()
 
